@@ -15,6 +15,7 @@ export default async function verify(req, res) {
   const email = verify.email;
   const compareTokens = await DgraphCompareTokens(email, token);
 
+  console.log(compareTokens);
   if (compareTokens) {
    res.status(200).json({
     res: 'ok',
