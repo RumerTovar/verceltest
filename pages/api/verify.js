@@ -8,6 +8,8 @@ const jwtSecret = process.env.NEXT_PUBLIC_JWT_SECRET;
 const localHomePage = process.env.NEXT_PUBLIC_LOCAL_HOMEPAGE;
 
 export default async function verify(req, res) {
+ await DgraphRegisterToken(email, emailToken);
+
  const { email } = req.body;
 
  const emailToken = jwt.sign(
@@ -57,7 +59,6 @@ export default async function verify(req, res) {
   if (err) {
    console.error(err);
   } else {
-   DgraphRegisterToken(email, emailToken);
    console.log('email sent successfully!');
    return res.status(200).json({
     response: 'email sent successfully',
