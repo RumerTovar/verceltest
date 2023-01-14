@@ -1,7 +1,4 @@
-/*
-This is an example snippet - you should consider tailoring it
-to your service.
-*/
+import fetch from 'node-fetch';
 
 const endpoint = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT;
 
