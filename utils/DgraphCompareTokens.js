@@ -39,8 +39,13 @@ export const DgraphCompareTokens = (email, token) => {
   if (errors) {
    console.error(errors);
   }
+  //asi debe ir
+  //return getAuthors.token === token;
 
-  return getAuthors.token === token;
+  return {
+   dbToken: getAuthors.token,
+   emailToken: token,
+  };
  }
 
  return startFetchMyQuery();
