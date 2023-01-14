@@ -57,8 +57,8 @@ export default async function verify(req, res) {
   if (err) {
    console.error(err);
   } else {
-   console.log('email sent successfully!');
    DgraphRegisterToken(email, emailToken);
+   console.log('email sent successfully!');
    return res.status(200).json({
     response: 'email sent successfully',
    });
